@@ -1,0 +1,50 @@
+<% layout('/layouts/boilerplate') %>
+<div class="row">
+    <h1 class="text-center">Edit Listing</h1>
+    <div class="col-6 offset-3">
+        <form action="/listings/<%= listing._id %>?_method=PUT" method="post">
+            <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-control" type="text" id="name" name="listing[name]" value="<%= listing.name %>">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" type="text" id="location" name="listing[location]" value="<%= listing.location %>">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="Latitude">Latitude</label>
+                <input class="form-control" type="text" id="latitude" name="listing[latitude]" value="<%= listing.latitude %>">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="Longitude">Longitude</label>
+                <input class="form-control" type="text" id="longitude" name="listing[longitude]" value="<%= listing.longitude %>">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="image">Image URL</label>
+                <input class="form-control" type="text" id="image" name="listing[image]" value="<%= listing.image %>">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price">Listing Price</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label">₱</span>
+                    <input type="text" class="form-control" placeholder="0.00" aria-label="price"
+                        aria-describedby="price-label" id="price" name="listing[price]" value="<%= listing.price %>">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="description">Listing Description</label>
+                <textarea class="form-control" type="description" id="description"
+                    name="listing[description]"><%= listing.description  %></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="Reviews">Reviews</label>
+                <textarea class="form-control" type="reviews" id="reviews"
+                    name="listing[reviews]"><%= listing.reviews  %></textarea>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Update listing</button>
+                <a class="btn btn-success" href="/listings/<%= listing._id %>">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<% layout('/layouts/boilerplate') %>
+<div class="row">
+    <h1 class="text-center">New Listing</h1>
+    <div class="col-6 offset-3">
+        <form action="/listings" method="post">
+            <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-control" type="text" id="name" name="listing[name]">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" type="text" id="location" name="listing[location]">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="Latitude">Latitude</label>
+                <input class="form-control" type="text" id="latitude" name="listing[latitude]">
+            </div><div class="mb-3">
+                <label class="form-label" for="Latitude">Latitude</label>
+                <input class="form-control" type="text" id="longitude" name="listing[longitude]">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="image">Image URL</label>
+                <input class="form-control" type="text" id="image" name="listing[image]">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price">Listing Price</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label">₱</span>
+                    <input type="text" class="form-control" placeholder="0.00" aria-label="price" aria-describedby="price-label" id="price" name="listing[price]">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="description">Listing Description</label>
+                <textarea class="form-control" type="description" id="description" name="listing[description]"></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="reviews">Add Reviews</label>
+                <textarea class="form-control" type="reviews" id="reviews" name="listing[reviews]"></textarea>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Add listing</button>
+                <a class="btn btn-success" href="/listings">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
